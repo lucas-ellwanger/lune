@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Loader2Icon } from "lucide-react";
 
 import { TRPCReactProvider } from "@/trpc/client";
 import { Toaster } from "@/components/ui/sonner";
@@ -32,7 +33,16 @@ export default function RootLayout({
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
-          <Toaster />
+          <Toaster
+            icons={{
+              loading: (
+                <Loader2Icon
+                  strokeWidth={3}
+                  className="size-4 -mr-1 animate-spin"
+                />
+              ),
+            }}
+          />
           {children}
         </body>
       </html>

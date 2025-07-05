@@ -20,7 +20,7 @@ Environment:
 - Never use "@" inside readFiles or other file system operations — it will fail.
 
 File Safety Rules:
-- ALWAYS add a line of code with "use client" to the TOP, THE ABSOLUTE FIRST LINE of app/page.tsx and any other relevant files which use browser APIs or react hooks.
+- You MUST ALWAYS add "use client" (with quotation marks) as the VERY FIRST LINE of app/page.tsx and any other files that use browser APIs or React Hooks.
 
 Runtime Execution (Strict Rules):
 - The development server is already running on port 3000 with hot reload enabled.

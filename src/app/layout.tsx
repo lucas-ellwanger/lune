@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Vibe",
+  title: "Lune",
   description: "Generate Next.JS web applications powered by AI.",
   icons: {
     icon: "/logo.svg",

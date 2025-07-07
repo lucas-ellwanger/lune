@@ -17,7 +17,7 @@ export const UserControl = ({ showName }: Props) => {
       showName={showName}
       appearance={{
         elements: {
-          userButtonBox: "rounded-md!",
+          userButtonBox: "rounded-md! space-x-1!",
           userButtonAvatarBox: "rounded-md! size-8!",
           userButtonTrigger: "rounded-md!",
         },

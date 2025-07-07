@@ -59,3 +59,9 @@ model Fragment {
 
   message Message @relation(fields: [messageId], references: [id], onDelete: Cascade)
 }
+
+model Usage {
+  key String @id
+  points Int
+  expire DateTime?
+}

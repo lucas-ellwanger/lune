@@ -5,6 +5,7 @@ import Link from "next/link";
 import type { Fragment } from "@/generated/prisma";
 import { useAuth } from "@clerk/nextjs";
 import { CodeIcon, CrownIcon, EyeIcon } from "lucide-react";
+import { ErrorBoundary } from "react-error-boundary";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -39,17 +40,21 @@ export const ProjectView = ({ projectId }: Props) => {
           minSize={20}
           className="flex flex-col min-h-0"
         >
-          <Suspense fallback={<p>Loading project...</p>}>
-            <ProjectHeader projectId={projectId} />
-          </Suspense>
+          <ErrorBoundary fallback={<p>Project header error</p>}>
+            <Suspense fallback={<p>Loading project...</p>}>
+              <ProjectHeader projectId={projectId} />
+            </Suspense>
+          </ErrorBoundary>
 
-          <Suspense fallback={<p>Loading messages...</p>}>
-            <MessagesContainer
-              projectId={projectId}
-              activeFragment={activeFragment}
-              setActiveFragment={setActiveFragment}
-            />
-          </Suspense>
+          <ErrorBoundary fallback={<p>Messages container error</p>}>
+            <Suspense fallback={<p>Loading messages...</p>}>
+              <MessagesContainer
+                projectId={projectId}
+                activeFragment={activeFragment}
+                setActiveFragment={setActiveFragment}
+              />
+            </Suspense>
+          </ErrorBoundary>
         </ResizablePanel>
 
         <ResizableHandle className="hover:bg-primary transition-colors" />

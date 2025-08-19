@@ -27,7 +27,7 @@ Lune is an AI-powered platform that enables users to create full-stack websites 
 
 ### Installation
 
-```
+```bash
 # Clone the repository
 git clone https://github.com/lucas-ellwanger/lune.git
 cd lune
@@ -42,7 +42,7 @@ pnpm install
 
 1. **Copy the environment variable template**
 
-```
+```bash
 cp .env.example .env.local
 ```
 
@@ -51,9 +51,9 @@ cp .env.example .env.local
 - Create a [Neon](http://neon.tech/) account, create a new database and add the `DATABASE_URL` to the `.env.local` file.
 - Setup [Clerk](https://clerk.com), add the `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY` and `CLERK_SECRET_KEY` to the `.env.local` file.
 - Setup [OpenAI](https://platform.openai.com/), add the `OPENAI_API_KEY` to the `.env.local` file.
-- Setup [E2B](), create a new project, publish the template file, and add the `E2B_API_KEY` to the `.env.local` file.
+- Setup [E2B](https://e2b.dev/), create a new project, publish the template, and add the `E2B_API_KEY` to the `.env.local` file.
 
-```
+```env
 # NeonDB
 DATABASE_URL="postgresql://user:password@localhost:5432/lune"
 
@@ -77,14 +77,14 @@ NEXT_PUBLIC_CLERK_SIGN_UP_FALLBACK_REDIRECT_URL="/"
 
 ### Database Setup
 
-```
+```bash
 # Push the schema to the database
 npm run db:push
 ```
 
 ### Start the Development Server
 
-```
+```bash
 # Start the Inngest local development server
 npx inngest-cli@latest dev
 
@@ -103,7 +103,7 @@ Access the application:
 
 ## Production Deployment
 
-```
+```bash
 # Build the production version
 npm run build
 
